@@ -72,6 +72,7 @@ prefixes for them. Just define a list of tables in the tables attribute::
 
     class PersonTablesView(MultiTableMixin, TemplateView):
         template_name = "multiTable.html"
+        qs = Person.objects.all()
         tables = [
             PersonTable(qs),
             PersonTable(qs, exclude=("country", ))
